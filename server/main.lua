@@ -196,8 +196,8 @@ ESX.RegisterServerCallback('mil_vehicleshop:buyVehicle', function(source, cb, mo
 		end
 	end
 
-	if modelPrice and xPlayer.getAccount('coinlegend') >= modelPrice then
-		xPlayer.removeAccountMoney('coinlegend' ,modelPrice)
+	if modelPrice and xPlayer.getAccount(Config.PlateLetters) >= modelPrice then
+		xPlayer.removeAccountMoney(Config.PlateLetters ,modelPrice)
 
 		MySQL.insert('INSERT INTO owned_vehicles (owner, plate, vehicle) VALUES (@owner, @plate, @vehicle)', {
 			['@owner'] = xPlayer.identifier,
