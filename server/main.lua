@@ -29,7 +29,7 @@ function RemoveOwnedVehicle(plate)
 end
 
 MySQL.ready(function()
-	MySQL.query('SELECT * FROM mil_mil_vehicle_categories', {}, function(_categories)
+	MySQL.query('SELECT * FROM mil_vehicle_categories', {}, function(_categories)
 		categories = _categories
 
 		MySQL.query('SELECT * FROM mil_vehicles', {}, function(_vehicles)
